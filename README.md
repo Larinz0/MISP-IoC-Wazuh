@@ -65,3 +65,5 @@ Subsequently, navigate to /var/ossec/etc/rules/local_rules.xml and incorporate t
 </group>
 ```
 
+![alt text](https://i.ibb.co/ZgMMXq3/Cattura.png)
+
