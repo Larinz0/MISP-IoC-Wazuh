@@ -37,12 +37,14 @@ healthslie.com:
 Appending ':' immediately after the domain serves the purpose of facilitating the integration of the file into Wazuh's CDB lists.
 ## Incorporation of MISP IoCs into Wazuh
 
-As evident from the developed script, a file is created within:
+As evident from the developed script, a file is created within:<br />
+This is deliberate, as it aligns with the default path for implementing CDB lists in Wazuh.
 
 ```bash
 /var/ossec/etc/lists/Blacklist-MISP
 ```
-This is deliberate, as it aligns with the default path for implementing CDB lists in Wazuh.
+
+#### Remember to assign the following permission
 ```bash
 chown wazuh:wazuh Blacklist-MISP
 ```
@@ -65,5 +67,10 @@ Subsequently, navigate to /var/ossec/etc/rules/local_rules.xml and incorporate t
 </group>
 ```
 
+## Now we can restart our Wazuh
+```bash
+systemctl restart wazuh-manager
+```
+🚨[INFO] Will only trigger if the domain is present in MISP CDB🚨
 ![alt text](https://i.ibb.co/ZgMMXq3/Cattura.png)
 
